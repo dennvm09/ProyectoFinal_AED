@@ -12,6 +12,7 @@ import java.util.Set;
 import collections.IEdge;
 import collections.IGraph;
 import collections.NodeAdyacentWeight;
+import collections.DisjointSets;
 import queue_Linny.*;
 import stack_Linny.LinnyStack;
 
