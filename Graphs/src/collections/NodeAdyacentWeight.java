@@ -1,4 +1,4 @@
-package model;
+package collections;
 
 public class NodeAdyacentWeight<E extends Node> implements Comparable<NodeAdyacentWeight<E>> {
 

@@ -1,4 +1,4 @@
-package model;
+package collections;
 
 public interface INode<E> {
 

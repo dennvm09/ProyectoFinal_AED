@@ -1,6 +1,9 @@
-package model;
+package collections;
 
 import java.util.ArrayList;
+
+import model.Graph;
+import model.ListWeight;
 
 public interface IGraph<E> {
 

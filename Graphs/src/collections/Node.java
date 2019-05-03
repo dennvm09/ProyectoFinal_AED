@@ -1,4 +1,4 @@
-package model;
+package collections;
 
 public abstract class Node<E> implements INode<E> {
 

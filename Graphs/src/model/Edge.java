@@ -3,6 +3,9 @@ package model;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import collections.IEdge;
+import collections.Node;
+
 public class Edge<E> extends Node<E> implements IEdge<E>, Comparable<Edge<E>> {
 	
 	private ArrayList<IEdge<E>> adjacents;
