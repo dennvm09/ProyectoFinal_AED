@@ -15,15 +15,6 @@ public class GraphTest {
 		graph = new Graph<>(4);	
 	}
 	
-	public void stage2() throws Exception {
-		graph = new Graph<>(4);	
-		for (int i = 0; i < 4; i++) {
-			String m =  "re"+i;
-			graph.addNode(m);
-		}
-	}
-	
-	
 	@Test
 	public void AddNodeTest() {
 		stage1();
@@ -54,10 +45,6 @@ public class GraphTest {
 			
 		}
 	}
-	
-	
-	
-	
-	
+
 
 }
