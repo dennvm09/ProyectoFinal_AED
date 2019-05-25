@@ -2,8 +2,8 @@ package collections;
 
 import java.util.ArrayList;
 
-import model.Graph;
-import model.ListWeight;
+import graph.Graph;
+import graph.ListWeight;
 
 public interface IGraph<E> {
 

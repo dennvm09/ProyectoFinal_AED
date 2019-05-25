@@ -1,4 +1,4 @@
-package model;
+package graph;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -113,18 +113,7 @@ public class GraphM<T> implements IGraphM<T> {
 	}
 
 
-	public NodeM<T> searchNodeM(T key) {
-		
-		NodeM<T> node = null;
-		boolean find = false;
-		for(int i = 0; i < nodes.size() && !find; i++) {
-			if(nodes.get(i).getElem().equals(key)) {
-				node = nodes.get(i);
-				find = true;
-			}
-		}
-		return node;
-	}
+	
 
 	
 	public void deleteNodeM(T key) {
@@ -374,6 +363,22 @@ public class GraphM<T> implements IGraphM<T> {
 			}
 		}
 		return node.getPos();
+	}
+
+	@Override
+	public NodeM<T> searchNodeM(T key) {
+		
+
+		NodeM<T> node = null;
+		boolean find = false;
+		for(int i = 0; i < nodes.size() && !find; i++) {
+			if(nodes.get(i).getElem().equals(key)) {
+				node = nodes.get(i);
+				find = true;
+			}
+		}
+		return node;
+	
 	}
 
 	

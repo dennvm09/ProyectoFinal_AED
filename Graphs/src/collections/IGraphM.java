@@ -1,6 +1,5 @@
 package collections;
-
-import model.NodeM;
+import graph.NodeM;
 
 public interface IGraphM<T> {
 	

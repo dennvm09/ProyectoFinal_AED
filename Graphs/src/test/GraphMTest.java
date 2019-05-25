@@ -7,15 +7,15 @@ import java.util.ArrayList;
 import org.junit.jupiter.api.Test;
 
 import collections.Tree;
-import model.GraphM;
-import model.NodeM;
+import graph.*;
 
 public class GraphMTest {
 
-	private GraphM<String> graph;
+private GraphM<String> graph;
 	
 	public void stage1() throws Exception {
-		graph = new GraphM<>(4);	
+			graph = new GraphM<>(4);	
+		
 		for (int i = 0; i < 4; i++) {
 			String m =  "re"+i;
 			graph.addNodeM(m);
