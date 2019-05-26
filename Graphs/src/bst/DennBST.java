@@ -262,4 +262,8 @@ public abstract class DennBST<K extends Comparable, V> implements IDennBST<K, V>
 		return ans;
 	}
 	
+	public static void main(String[] args) {
+		//DennBST<Comparable<String>, String> n = new DennBST<Comparable<String>, String >();
+	}
+	
 }

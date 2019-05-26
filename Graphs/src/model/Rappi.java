@@ -6,7 +6,7 @@ import trees.RedBlackBST;
 
 public class Rappi {
 	
-	//private RedBlackBST<Commune> communes;
+	private RedBlackBST<Commune> communes;
 	private DennAVLTree<String, Dealer> dealer;
 	
 	public Rappi() {
