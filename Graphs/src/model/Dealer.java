@@ -35,7 +35,7 @@ public class Dealer implements Comparable<Dealer> {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-
+	
 	public boolean isPassword(String passWord) {
 		
 		if (password.equals(passWord) == true) {
@@ -57,5 +57,7 @@ public class Dealer implements Comparable<Dealer> {
 			return 1;
 		}
 	}
+	
+	
 	
 }

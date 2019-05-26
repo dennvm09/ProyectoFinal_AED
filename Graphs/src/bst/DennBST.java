@@ -1,7 +1,6 @@
 package bst;
 
 
-
 public abstract class DennBST<K extends Comparable, V> implements IDennBST<K, V> {
 
 	protected DennNode<K, V> root;
@@ -261,13 +260,5 @@ public abstract class DennBST<K extends Comparable, V> implements IDennBST<K, V>
 		ans[1] = y;
 		return ans;
 	}
-	
-<<<<<<< HEAD
-	public static void main(String[] args) {
-		//DennBST<Comparable<String>, String> n = new DennBST<Comparable<String>, String >();
-	}
-=======
-
->>>>>>> 225bf41d1ee253b9acc2c1216c4a6230cba01463
 	
 }

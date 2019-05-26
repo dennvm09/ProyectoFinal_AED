@@ -393,5 +393,19 @@ public class RedBlackBST<T extends Comparable<T>> extends TreesBinarySearch<T> {
         x.setBlack();
                                                         
     }
+	
+	public static void main(String[] args) {
+		
+		RedBlackBST<String> p = new RedBlackBST<>();
+		
+		p.insert("hola");
+		p.insert("dos");
+		p.insert("tres");
+		System.out.println(p.getRoot().getData());
+		//p.inOrder(p.getRoot());
+		
+		System.out.println(p.searchNode("hola", null));
+		
+	}
 
 }
