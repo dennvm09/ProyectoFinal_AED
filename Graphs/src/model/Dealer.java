@@ -1,6 +1,6 @@
 package model;
 
-public class Dealer {
+public class Dealer implements Comparable<Dealer> {
 	
 	private String id;
 	private String name;
@@ -43,6 +43,19 @@ public class Dealer {
 		}
 		
 		return false;
+	}
+
+	@Override
+	public int compareTo(Dealer o) {
+
+		if(o.getId().compareTo(this.id) == 0) {
+			return 0;
+		}
+		else if(o.getId().compareTo(this.id) < 0) {
+			return -1;
+		}else {
+			return 1;
+		}
 	}
 	
 }
