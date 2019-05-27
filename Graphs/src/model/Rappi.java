@@ -1,5 +1,11 @@
 package model;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+
 import avl.*;
 import bst.DennNode;
 import trees.RedBlackBST;
@@ -77,6 +83,41 @@ public class Rappi {
 			} else {
 				return false;
 			}
+		}
+
+	}
+
+	public void txtCommuneNeighborhood() throws FileNotFoundException {
+
+		File archive = null;
+		FileReader fr = null;
+		BufferedReader br = null;
+
+		archive = new File("C:\\ZonasDeCobertura.txt");
+		fr = new FileReader(archive);
+		br = new BufferedReader(fr);
+
+		try {
+			int casos = Integer.parseInt(br.readLine());
+			for (int i = 0; i < casos; i++) {
+
+				String communeN = br.readLine();
+				int number = Integer.parseInt(br.readLine());
+				Commune added = new Commune(communeN, number);
+				String neigh = br.readLine();
+				String[] neighBorhood = neigh.split("	");
+
+				for (int j = 0; j < neighBorhood.length; j++) {
+					added.addNeighB(neighBorhood[j], 0, 0);
+				}
+			}
+
+			br.close();
+			fr.close();
+
+		} catch (IOException e) {
+
+			e.printStackTrace();
 		}
 
 	}

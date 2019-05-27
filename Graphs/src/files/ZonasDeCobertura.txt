@@ -1,24 +1,37 @@
+12
 22
+4
 Ciudad Jardín	Pance	Club Campestre	Rio Lili
+5
 5
 Salomia	Los Andes	El Sena	Chiminangos	Brisas del Guabito
 4
+4
 Calima	Flora Industrial	Las Delicias	Manzanares
 3
+4
 El Peñón	El Nacional	San Nicolás	La Merced
 17
+6
 El Ingenio	El Limonar	La Hacienda	Capri	Caney	Lilí
 8
+6
 La Base	Chapinero	El Troncal	Atanasio Girardot	Las Ámericas
 2
+6
 Normandía	Ciudad los Álamos	Altos de Menga	Vipasa	Centenario	Arroyohondo
 19
+4
 Pampalinda	El Lido	Cuarto de Legua	Champagnat	Tequendama
 7
+4
 La Playa	Las Ceibas	Los Pinos	San Marino
 9
+4
 Bretaña	Guayaquil	Belálcazar	Aranjuez
 10
+5
 El Guabal	La Selva	El Dorado	Departamental	Santa Elena
 11
+5
 El Jardín	Ciudad Modelo	La Esperanza La Independecia	San Carlos
