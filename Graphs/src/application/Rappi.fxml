@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="674.0" prefWidth="884.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ImageView fitHeight="147.0" fitWidth="884.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/banner.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="18.0" layoutY="174.0" text="Cantidad de pedidos:">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <RadioButton layoutX="31.0" layoutY="197.0" mnemonicParsing="false" text="Un pedido">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </RadioButton>
+      <RadioButton layoutX="31.0" layoutY="222.0" mnemonicParsing="false" text="Dos o más pedidos">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </RadioButton>
+      <Pane layoutX="16.0" layoutY="258.0" prefHeight="369.0" prefWidth="424.0">
+         <children>
+            <Label layoutX="14.0" layoutY="38.0" text="Comuna: ">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="217.0" layoutY="38.0" text="Barrio:">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <ComboBox layoutX="14.0" layoutY="61.0" prefWidth="150.0" />
+            <ComboBox layoutX="217.0" layoutY="61.0" prefWidth="150.0" />
+            <Label layoutX="14.0" layoutY="14.0" text="Origen:">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="14.0" layoutY="121.0" text="Comuna: ">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="217.0" layoutY="121.0" text="Barrio:">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <ComboBox layoutX="14.0" layoutY="144.0" prefWidth="150.0" />
+            <ComboBox layoutX="217.0" layoutY="144.0" prefWidth="150.0" />
+            <Label layoutX="14.0" layoutY="97.0" text="Destino:">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Button layoutX="126.0" layoutY="194.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="127.0" text="Registrar" />
+            <TextArea editable="false" layoutX="14.0" layoutY="276.0" prefHeight="73.0" prefWidth="398.0" />
+            <Label layoutX="21.0" layoutY="248.0" text="Recorrido:">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <ImageView fitHeight="376.0" fitWidth="410.0" layoutX="514.0" layoutY="152.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/mapa.png" />
+         </image>
+      </ImageView>
+   </children>
+</Pane>

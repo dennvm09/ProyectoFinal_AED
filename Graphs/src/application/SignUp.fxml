@@ -8,8 +8,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="235.0" prefWidth="443.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.SignUpController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="235.0" prefWidth="390.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.SignUpController">
    <children>
       <ImageView fx:id="imgFondo" fitHeight="373.0" fitWidth="543.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -39,11 +38,11 @@
             <Font name="System Bold" size="20.0" />
          </font>
       </Label>
-      <ImageView fitHeight="30.0" fitWidth="123.0" layoutX="295.0" layoutY="173.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="30.0" fitWidth="123.0" layoutX="262.0" layoutY="163.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/bigoteb.png" />
          </image>
       </ImageView>
-      <Button fx:id="btCreate" layoutX="278.0" layoutY="105.0" mnemonicParsing="false" text="Create account" />
+      <Button fx:id="btCreate" layoutX="260.0" layoutY="105.0" mnemonicParsing="false" onAction="#iniciarSesion" text="Create account" />
    </children>
 </Pane>
