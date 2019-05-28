@@ -15,7 +15,7 @@
          <image>
             <Image url="@../images/fondo.png" />
          </image></ImageView>
-      <Button fx:id="btEntrar" layoutX="86.0" layoutY="211.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="102.0" />
+      <Button fx:id="btEntrar" layoutX="86.0" layoutY="203.0" mnemonicParsing="false" onAction="#ventanaPrincipal" prefHeight="25.0" prefWidth="102.0" />
       <Label fx:id="lblUsuario" layoutX="43.0" layoutY="83.0" text="Usuario:" textFill="WHITE">
          <font>
             <Font name="System Bold" size="15.0" />
@@ -33,5 +33,11 @@
             <Image url="@../images/logorappi.png" />
          </image>
       </ImageView>
+      <Label layoutX="41.0" layoutY="250.0" text="New in Rappi?">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <Button fx:id="btSignUp" layoutX="142.0" layoutY="247.0" mnemonicParsing="false" onAction="#nuevaCuenta" prefHeight="25.0" prefWidth="94.0" text="sign up" />
    </children>
 </Pane>
