@@ -223,6 +223,7 @@ public class RappiController {
 		});
 	}
 	
+	
 	public void rellenarBarrios(String[] barrios) {
 		ObservableList<String> items = FXCollections.observableArrayList();
 		for(int i = 0; i < barrios.length; i++) {
