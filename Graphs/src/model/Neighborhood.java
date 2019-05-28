@@ -7,10 +7,9 @@ public class Neighborhood {
 	private double x;
 	private double y;
 	
-	public Neighborhood(String name, String  code) {
+	public Neighborhood(String name) {
 		
 		this.name = name;
-		this.code = code;
 		x = 0;
 		y = 0;
 	}

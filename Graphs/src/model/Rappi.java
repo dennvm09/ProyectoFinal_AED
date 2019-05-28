@@ -8,24 +8,52 @@ import java.io.IOException;
 
 import avl.*;
 import bst.DennNode;
+import graph.Graph;
+import graph.GraphM;
 import trees.RedBlackBST;
 
 public class Rappi {
 
 	private DennAVLTree<String, Dealer> dealeravl;
 	private DennAVLTree<String, Commune> commune;
+	private GraphM<Neighborhood> neighB;
 
 	public Rappi() {
 
 		dealeravl = new DennAVLTree<>();
 		commune = new DennAVLTree<>();
+		neighB = new GraphM<>(55);
 
+	}
+
+	public DennAVLTree<String, Dealer> getDealeravl() {
+		return dealeravl;
+	}
+
+	public void setDealeravl(DennAVLTree<String, Dealer> dealeravl) {
+		this.dealeravl = dealeravl;
+	}
+
+	public DennAVLTree<String, Commune> getCommune() {
+		return commune;
+	}
+
+	public void setCommune(DennAVLTree<String, Commune> commune) {
+		this.commune = commune;
+	}
+
+	public GraphM<Neighborhood> getNeighB() {
+		return neighB;
+	}
+
+	public void setNeighB(GraphM<Neighborhood> neighB) {
+		this.neighB = neighB;
 	}
 
 	// methods add Commune and Dealer
 	public void addDealer(String id, String name, String password) {
 		dealeravl.addNode(id, new Dealer(id, name, password));
-		//System.out.println(dealeravl.getRoot().getValue().getName());
+		// System.out.println(dealeravl.getRoot().getValue().getName());
 
 	}
 
@@ -69,6 +97,87 @@ public class Rappi {
 
 	}
 
+	// agregar barrios
+	public void addNeighborhod() {
+
+		// Barrios de la comuna 22
+		Commune c22 = searchCommune("22");
+		
+		for (int i = 0; i < c22.getNeigh().length; i++) {	
+			neighB.addNodeM(c22.getNeigh()[i]);	
+		}
+		
+		Commune c5 = searchCommune("5");
+		for (int i = 0; i < c5.getNeigh().length; i++) {
+			neighB.addNodeM(c5.getNeigh()[i]);	
+		}
+		
+		Commune c4 = searchCommune("4");
+		for (int i = 0; i < c4.getNeigh().length; i++) {
+			neighB.addNodeM(c4.getNeigh()[i]);	
+		}
+		
+		Commune c3 = searchCommune("3");
+		for (int i = 0; i < c3.getNeigh().length; i++) {
+			neighB.addNodeM(c3.getNeigh()[i]);	
+		}
+		
+		Commune c17 = searchCommune("17");
+		for (int i = 0; i < c17.getNeigh().length; i++) {
+			neighB.addNodeM(c17.getNeigh()[i]);	
+		}
+		
+		Commune c8 = searchCommune("8");
+		for (int i = 0; i < c8.getNeigh().length; i++) {
+			neighB.addNodeM(c8.getNeigh()[i]);	
+		}
+		
+		Commune c2 = searchCommune("2");
+		for (int i = 0; i < c2.getNeigh().length; i++) {
+			neighB.addNodeM(c2.getNeigh()[i]);	
+		}
+		
+		Commune c19 = searchCommune("19");
+		for (int i = 0; i < c19.getNeigh().length; i++) {
+			neighB.addNodeM(c19.getNeigh()[i]);	
+		}
+		
+		Commune c7 = searchCommune("7");
+		for (int i = 0; i < c7.getNeigh().length; i++) {
+			neighB.addNodeM(c7.getNeigh()[i]);	
+		}
+		
+		Commune c9 = searchCommune("9");
+		for (int i = 0; i < c9.getNeigh().length; i++) {
+			neighB.addNodeM(c9.getNeigh()[i]);	
+		}
+		
+		Commune c10 = searchCommune("10");
+		for (int i = 0; i < c10.getNeigh().length; i++) {
+			neighB.addNodeM(c10.getNeigh()[i]);	
+		}
+		
+		Commune c11 = searchCommune("11");
+		for (int i = 0; i < c11.getNeigh().length; i++) {
+			neighB.addNodeM(c11.getNeigh()[i]);	
+		}
+		
+		
+
+		
+//		//Comuna 22 ciudad jardin - finca 
+//		neighB.addEdge(searchCommune("22").search("Ciudad Jardín"), commune.searchNode("22").getValue().search("La finca"), 2.1);
+//		//Ciudad Jardin - club campestre
+//		neighB.addEdge(searchCommune("22").search("Ciudad Jardín"), commune.searchNode("22").getValue().search("Club Campestre"), 1.4);
+//		// finca - pance
+//		neighB.addEdge(commune.searchNode("22").getValue().search("La finca"), commune.searchNode("22").getValue().search("Pance"), 16.6);
+//		//club campestre - cañasgordas
+//		neighB.addEdge(commune.searchNode("22").getValue().search("Club Campestre"), commune.searchNode("22").getValue().search("Cañasgordas"), 3.7);
+//		//pance - cañasgordas 
+//		neighB.addEdge(commune.searchNode("22").getValue().search("Pance"), commune.searchNode("22").getValue().search("Cañasgordas"), 3.7);
+//		
+	}
+
 	// Methods confirm user
 	public boolean signIn(String id, String password) {
 
@@ -84,6 +193,29 @@ public class Rappi {
 				return false;
 			}
 		}
+
+	}
+
+	public String codeN(String code) {
+
+		String r = " ";
+		Commune n = null;
+		Neighborhood s = null;
+
+		if (code.length() == 3) {
+			r = code.substring(0, 1);
+			n = searchCommune(r);
+			s = n.searchCode(code);
+			r = s.getName();
+
+		} else if (code.length() == 2) {
+			r = "" + code.charAt(0);
+			n = searchCommune(r);
+			s = n.searchCode(code);
+			r = s.getName();
+		}
+
+		return r;
 
 	}
 
@@ -104,16 +236,17 @@ public class Rappi {
 				String communeN = br.readLine();
 				String neigh = br.readLine();
 				String[] neighBorhood = neigh.split("	");
-				
+
 				int number = neighBorhood.length;
 				Commune added = new Commune(communeN, number);
 				addCommune(communeN, number);
 				String code = "";
 
 				for (int j = 0; j < neighBorhood.length; j++) {
-					code = communeN+""+j;
+					code = communeN + "" + j;
 					System.out.println(code);
 					added.addNeighB(neighBorhood[j], code, 0, 0);
+					searchCommune(added.getName()).setNeigh(added.getNeigh());
 				}
 			}
 
@@ -135,19 +268,24 @@ public class Rappi {
 
 		r.txtCommuneNeighborhood();
 		
+
 		System.out.println(r.commune.getRoot().getValue().getName());
 		for (int i = 0; i < r.commune.getRoot().getValue().getNeigh().length; i++) {
 			System.out.println(r.commune.getRoot().getLeft().getRight().getValue().getName());
 		}
 		
+//		System.out.println(r.commune.getRoot().getValue().getNeigh()[1].getName());
+//		System.out.println(r.commune.searchNode("22").getValue().getNeigh()[1].getName());
 		
-	
-
-		System.out.println(r.searchDealer("145").getName());
-		System.out.println(r.searchDealer("146").getName());
-		System.out.println(r.dealeravl.getRoot().getRight().getValue().getName());
+		r.addNeighborhod();
+		System.out.println(r.neighB.getNodes().size());
+		for (int i = 0; i < r.neighB.getNodes().size(); i++) {
+			System.out.println(r.neighB.getNodes().get(i).getElem().getName());
+		}
 		
-
+//		System.out.println(r.searchDealer("145").getName());
+//		System.out.println(r.searchDealer("146").getName());
+//		System.out.println(r.dealeravl.getRoot().getRight().getValue().getName());
 
 	}
 

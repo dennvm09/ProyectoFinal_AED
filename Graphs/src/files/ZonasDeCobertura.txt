@@ -8,7 +8,7 @@ Calima	Flora Industrial	Las Delicias	Manzanares
 3
 El Peñón	El Nacional	San Nicolás	La Merced
 17
-El Ingenio	El Limonar	La Hacienda		Capri	Caney	Lilí
+El Ingenio	El Limonar	La Hacienda	Capri	Caney	Lilí
 8
 La Base	Chapinero	El Troncal	Atanasio Girardot	Las Ámericas
 2
@@ -22,4 +22,4 @@ Bretaña	Guayaquil	Belálcazar	Aranjuez
 10
 El Guabal	El Dorado	Departamental	Santa Elena
 11
-Ciudad Modelo	La Esperanza La Independecia	San Carlos
+Ciudad Modelo	La Esperanza	La Independecia	San Carlos
