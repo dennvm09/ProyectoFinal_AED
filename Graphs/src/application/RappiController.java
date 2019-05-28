@@ -72,7 +72,6 @@ public class RappiController {
 	}
 	
 	public void checkers(int i) {
-		
 		if(i > 0) {
 			if(rbtPedido1.isSelected()) {
 				rbtPedido2.setSelected(false);
