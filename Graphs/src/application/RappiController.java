@@ -2,13 +2,20 @@ package application;
 
 import java.io.FileNotFoundException;
 
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextArea;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.DragEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.shape.Circle;
@@ -24,13 +31,13 @@ public class RappiController {
 	@FXML
 	private RadioButton rbtPedido2;
 	@FXML
-	private ComboBox<String> cbxComunaOrigen;
+	private ChoiceBox<String> cbxComunaOrigen;
 	@FXML
-	private ComboBox<String> cbxBarrioOrigen;
+	private ChoiceBox<String> cbxBarrioOrigen;
 	@FXML
-	private ComboBox<String> cbxComunaDestino;
+	private ChoiceBox<String> cbxComunaDestino;
 	@FXML
-	private ComboBox<String> cbxBarrioDestino;
+	private ChoiceBox<String> cbxBarrioDestino;
 	@FXML
 	private Button btRegistrar;
 	@FXML
@@ -163,21 +170,70 @@ public class RappiController {
 	@FXML
 	private Circle b84;
 	
-	
-	//
+	@FXML
+	private Button cl;
+
 	
 	public void initialize() {
 		
 		rbtPedido1.setOnAction(e-> checkers(1));
 		rbtPedido2.setOnAction(e-> checkers(-1));
 		pane1.setVisible(false);
+		
+		rellenarComunas();
+		//barriosxComuna();
 	}
 	
+	public void rellenarComunas() {
+		ObservableList<String> items = FXCollections.observableArrayList();
+		items.addAll("Comuna 2", "Comuna 3", "Comuna 4", "Comuna 5", "Comuna 7", "Comuna 8", "Comuna 9", "Comuna 10", "Comuna 11", "Comuna 17", "Comuna 19", "Comuna 22");
+		cbxComunaDestino.setItems(items);
+		cbxComunaOrigen.setItems(items);
+		
+		
+		
+	}
 	
+	public void barriosxComuna() {
+		cbxComunaOrigen.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
+			@Override
+			public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+				// TODO Auto-generated method stub
+				String [] c = newValue.split(" ");
+				String comuna = c[1];
+				
+				String[] barrios = Main.barriosxComuna(comuna);
+				rellenarBarrios(barrios);
 
+			}
+			
+		});
+		cbxComunaDestino.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
+			@Override
+			public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+				// TODO Auto-generated method stub
+				String [] c = newValue.split(" ");
+				String comuna = c[1];
+				
+				String[] barrios = Main.barriosxComuna(comuna);
+				rellenarBarrios(barrios);
+
+			}
+			
+		});
+	}
+	
+	public void rellenarBarrios(String[] barrios) {
+		ObservableList<String> items = FXCollections.observableArrayList();
+		for(int i = 0; i < barrios.length; i++) {
+			System.out.println(barrios[i]);
+			items.addAll(barrios[i]);
+		}
+		cbxBarrioOrigen.setItems(items);
+		cbxBarrioDestino.setItems(items);
+	}
 	
 	public void mostrarBarrios(MouseEvent e) {
-		
 		b220.setOnMouseMoved(a -> buscarBarrio("220"));
 		b221.setOnMouseMoved(a -> buscarBarrio("221"));
 		b222.setOnMouseMoved(a -> buscarBarrio("222"));
@@ -246,8 +302,6 @@ public class RappiController {
 		
 		imgMapa.setOnMouseMoved(a ->x());
 	}
-	
-	
 	public void x() {
 		lblHola.setText("");
 	}
@@ -255,7 +309,6 @@ public class RappiController {
 		String barrio = Main.searchNeighborhood(cod);
 		lblHola.setText(barrio);
 	}
-	
 	public void checkers(int i) {
 		if(i > 0) {
 			if(rbtPedido1.isSelected()) {
