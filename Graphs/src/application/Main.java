@@ -1,5 +1,7 @@
 package application;
 	
+import java.io.FileNotFoundException;
+
 import javafx.application.Application;
 import javafx.stage.Stage;
 import model.Rappi;
@@ -34,6 +36,29 @@ public class Main extends Application {
 	
 	public static void signUpDealer(String id, String name, String password) {
 		rappi.addDealer(id, name, password);
+	}
+	
+	public static String searchNeighborhood(String cod) {
+		
+		try {
+			rappi.txtCommuneNeighborhood();
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		String barrio = rappi.codeN(cod);
+		return barrio;
+	}
+	
+	public static String[] barriosxComuna(String comuna) {
+		try {
+			rappi.txtCommuneNeighborhood();
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		String[] barrios = rappi.searchCommune(comuna).toString().split("	");
+		return barrios;
 	}
 	
 	public static Rappi getRappi() {
