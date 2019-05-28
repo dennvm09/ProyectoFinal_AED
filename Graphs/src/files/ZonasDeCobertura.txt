@@ -14,7 +14,7 @@ La Base	Chapinero	El Troncal	Atanasio Girardot	Las Ámericas
 2
 Normandía	Ciudad los Álamos	Menga	Vipasa	Centenario	Arroyohondo
 19
-Pampalinda	El Lido	Cuarto de Legua	Champagnat	Tequendama
+Pampalinda	El Lido	Cuarto de Legua	Tequendama
 7
 Las Ceibas	Los Pinos	San Marino
 9

@@ -99,9 +99,6 @@ public class Commune {
 		return n;
 	}
 	
-	
-	
-
 	public String toString() {
 		String c = "";
 
