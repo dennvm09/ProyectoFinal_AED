@@ -1,5 +1,7 @@
 package application;
 	
+import java.io.FileNotFoundException;
+
 import javafx.application.Application;
 import javafx.stage.Stage;
 import model.Rappi;
@@ -37,6 +39,12 @@ public class Main extends Application {
 	}
 	
 	public static String searchNeighborhood(String cod) {
+		try {
+			rappi.txtCommuneNeighborhood();
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		return rappi.codeN(cod);
 	}
 	

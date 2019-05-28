@@ -229,6 +229,7 @@ public class Rappi {
 			r = s.getName();
 		}
 
+		System.out.println(r);
 		return r;
 
 	}
@@ -297,7 +298,7 @@ public class Rappi {
 			System.out.println(r.neighB.getNodes().get(i).getElem().getName());
 		}
 		
-		System.out.println(r.codeN("32"));
+		System.out.println(r.codeN("220"));
 		
 //		System.out.println(r.searchDealer("145").getName());
 //		System.out.println(r.searchDealer("146").getName());
