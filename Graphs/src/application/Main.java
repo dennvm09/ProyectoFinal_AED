@@ -36,6 +36,10 @@ public class Main extends Application {
 		rappi.addDealer(id, name, password);
 	}
 	
+	public static String searchNeighborhood(String cod) {
+		return rappi.codeN(cod);
+	}
+	
 	public static Rappi getRappi() {
 		return rappi;
 	}

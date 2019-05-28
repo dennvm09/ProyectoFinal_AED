@@ -83,8 +83,21 @@
             <Image url="@../images/mapa.png" />
          </image>
       </ImageView>
-      <Circle fx:id="circulo1" fill="DODGERBLUE" layoutX="492.0" layoutY="409.0" onMouseMoved="#metocaron" radius="7.0" stroke="BLACK" strokeType="INSIDE" />
-      <Label fx:id="lblHola" layoutX="627.0" layoutY="723.0" prefHeight="43.0" prefWidth="225.0" />
-      <Circle fx:id="circulo2" fill="DODGERBLUE" layoutX="485.0" layoutY="524.0" onMouseMoved="#metocaron" radius="7.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="circulo1" fill="#ff1feb" layoutX="492.0" layoutY="409.0" onMouseMoved="#metocaron" radius="7.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="circulo2" fill="#ff1ff8" layoutX="485.0" layoutY="524.0" onMouseMoved="#metocaron" radius="7.0" stroke="BLACK" strokeType="INSIDE" />
+      <Label fx:id="lblHola" layoutX="608.0" layoutY="732.0" prefHeight="43.0" prefWidth="250.0">
+         <font>
+            <Font name="System Bold" size="22.0" />
+         </font></Label>
+      <Circle fx:id="b223" fill="DODGERBLUE" layoutX="525.0" layoutY="709.0" onMouseMoved="#mostrarBarrios" radius="7.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="b224" fill="DODGERBLUE" layoutX="573.0" layoutY="723.0" onMouseMoved="#mostrarBarrios" radius="7.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="b221" fill="DODGERBLUE" layoutX="523.0" layoutY="754.0" onMouseMoved="#mostrarBarrios" radius="7.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="b222" fill="DODGERBLUE" layoutX="576.0" layoutY="678.0" onMouseMoved="#mostrarBarrios" radius="7.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="b220" fill="DODGERBLUE" layoutX="530.0" layoutY="661.0" onMouseMoved="#mostrarBarrios" radius="7.0" stroke="BLACK" strokeType="INSIDE" />
+      <Label layoutX="613.0" layoutY="694.0" text="Barrio:" underline="true">
+         <font>
+            <Font name="System Bold" size="23.0" />
+         </font>
+      </Label>
    </children>
 </Pane>

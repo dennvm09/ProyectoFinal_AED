@@ -43,6 +43,23 @@ public class RappiController {
 	@FXML
 	private Circle circulo2;
 	
+	
+	//Circulos que representan los barrios
+		//Comuna 22
+	@FXML
+	private Circle b220;
+	@FXML
+	private Circle b221;
+	@FXML
+	private Circle b222;
+	@FXML
+	private Circle b223;
+	@FXML
+	private Circle b224;
+	
+	
+	//
+	
 	public void initialize() {
 		
 		rbtPedido1.setOnAction(e-> checkers(1));
@@ -60,6 +77,23 @@ public class RappiController {
 			circulo1.setOnMouseMoved(a-> meto(1));
 			circulo2.setOnMouseMoved(a-> meto(2));
 			
+		
+	}
+	
+	
+	public void mostrarBarrios(MouseEvent e) {
+		b220.setOnMouseMoved(a -> buscarBarrio("220"));
+		b221.setOnMouseMoved(a -> buscarBarrio("221"));
+		b222.setOnMouseMoved(a -> buscarBarrio("222"));
+		b223.setOnMouseMoved(a -> buscarBarrio("223"));
+		b224.setOnMouseMoved(a -> buscarBarrio("224"));
+		
+	}
+	
+	
+	public void buscarBarrio(String cod) {
+		String barrio = Main.searchNeighborhood(cod);
+		lblHola.setText(barrio);
 		
 	}
 	
