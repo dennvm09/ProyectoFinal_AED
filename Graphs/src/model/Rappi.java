@@ -107,75 +107,89 @@ public class Rappi {
 			neighB.addNodeM(c22.getNeigh()[i]);	
 		}
 		
+		// Barrios de la comuna 5
 		Commune c5 = searchCommune("5");
 		for (int i = 0; i < c5.getNeigh().length; i++) {
 			neighB.addNodeM(c5.getNeigh()[i]);	
 		}
 		
+		// Barrios de la comuna 4
 		Commune c4 = searchCommune("4");
 		for (int i = 0; i < c4.getNeigh().length; i++) {
 			neighB.addNodeM(c4.getNeigh()[i]);	
 		}
 		
+		// Barrios de la comuna 3
 		Commune c3 = searchCommune("3");
 		for (int i = 0; i < c3.getNeigh().length; i++) {
 			neighB.addNodeM(c3.getNeigh()[i]);	
 		}
 		
+		// Barrios de la comuna 17
 		Commune c17 = searchCommune("17");
 		for (int i = 0; i < c17.getNeigh().length; i++) {
 			neighB.addNodeM(c17.getNeigh()[i]);	
 		}
 		
+		// Barrios de la comuna 8
 		Commune c8 = searchCommune("8");
 		for (int i = 0; i < c8.getNeigh().length; i++) {
 			neighB.addNodeM(c8.getNeigh()[i]);	
 		}
 		
+		// Barrios de la comuna 2
 		Commune c2 = searchCommune("2");
 		for (int i = 0; i < c2.getNeigh().length; i++) {
 			neighB.addNodeM(c2.getNeigh()[i]);	
 		}
 		
+		// Barrios de la comuna 19
 		Commune c19 = searchCommune("19");
 		for (int i = 0; i < c19.getNeigh().length; i++) {
 			neighB.addNodeM(c19.getNeigh()[i]);	
 		}
 		
+		// Barrios de la comuna 7
 		Commune c7 = searchCommune("7");
 		for (int i = 0; i < c7.getNeigh().length; i++) {
 			neighB.addNodeM(c7.getNeigh()[i]);	
 		}
 		
+		// Barrios de la comuna 9
 		Commune c9 = searchCommune("9");
 		for (int i = 0; i < c9.getNeigh().length; i++) {
 			neighB.addNodeM(c9.getNeigh()[i]);	
 		}
 		
+		// Barrios de la comuna 10
 		Commune c10 = searchCommune("10");
 		for (int i = 0; i < c10.getNeigh().length; i++) {
 			neighB.addNodeM(c10.getNeigh()[i]);	
 		}
 		
+		// Barrios de la comuna 11
 		Commune c11 = searchCommune("11");
 		for (int i = 0; i < c11.getNeigh().length; i++) {
 			neighB.addNodeM(c11.getNeigh()[i]);	
 		}
+	}
+	
+	
+	//agregar aristas 
+	public void addEdges() {
+		
+		//Comuna 22 ciudad jardin - finca 
+		neighB.addEdge(searchCommune("22").search("Ciudad Jardín"), searchCommune("22").search("La finca"), 2.1);
+		//Ciudad Jardin - club campestre
+		neighB.addEdge(searchCommune("22").search("Ciudad Jardín"), searchCommune("22").search("Club Campestre"), 1.4);
+		// finca - pance
+		neighB.addEdge(searchCommune("22").search("La finca"), searchCommune("22").search("Pance"), 16.6);
+		//club campestre - cañasgordas
+		neighB.addEdge(searchCommune("22").search("Club Campestre"), searchCommune("22").search("Cañasgordas"), 3.7);
+		//pance - cañasgordas 
+		neighB.addEdge(searchCommune("22").search("Pance"), searchCommune("22").search("Cañasgordas"), 3.7);
 		
 		
-
-		
-//		//Comuna 22 ciudad jardin - finca 
-//		neighB.addEdge(searchCommune("22").search("Ciudad Jardín"), commune.searchNode("22").getValue().search("La finca"), 2.1);
-//		//Ciudad Jardin - club campestre
-//		neighB.addEdge(searchCommune("22").search("Ciudad Jardín"), commune.searchNode("22").getValue().search("Club Campestre"), 1.4);
-//		// finca - pance
-//		neighB.addEdge(commune.searchNode("22").getValue().search("La finca"), commune.searchNode("22").getValue().search("Pance"), 16.6);
-//		//club campestre - cañasgordas
-//		neighB.addEdge(commune.searchNode("22").getValue().search("Club Campestre"), commune.searchNode("22").getValue().search("Cañasgordas"), 3.7);
-//		//pance - cañasgordas 
-//		neighB.addEdge(commune.searchNode("22").getValue().search("Pance"), commune.searchNode("22").getValue().search("Cañasgordas"), 3.7);
-//		
 	}
 
 	// Methods confirm user
@@ -203,7 +217,7 @@ public class Rappi {
 		Neighborhood s = null;
 
 		if (code.length() == 3) {
-			r = code.substring(0, 1);
+			r = code.substring(0, 2);
 			n = searchCommune(r);
 			s = n.searchCode(code);
 			r = s.getName();
@@ -244,7 +258,7 @@ public class Rappi {
 
 				for (int j = 0; j < neighBorhood.length; j++) {
 					code = communeN + "" + j;
-					System.out.println(code);
+					//System.out.println(code);
 					added.addNeighB(neighBorhood[j], code, 0, 0);
 					searchCommune(added.getName()).setNeigh(added.getNeigh());
 				}
@@ -282,6 +296,8 @@ public class Rappi {
 		for (int i = 0; i < r.neighB.getNodes().size(); i++) {
 			System.out.println(r.neighB.getNodes().get(i).getElem().getName());
 		}
+		
+		System.out.println(r.codeN("32"));
 		
 //		System.out.println(r.searchDealer("145").getName());
 //		System.out.println(r.searchDealer("146").getName());
