@@ -25,7 +25,7 @@ public class Rappi {
 	// methods add Commune and Dealer
 	public void addDealer(String id, String name, String password) {
 		dealeravl.addNode(id, new Dealer(id, name, password));
-		System.out.println(dealeravl.getRoot().getValue().getName());
+		//System.out.println(dealeravl.getRoot().getValue().getName());
 
 	}
 
@@ -93,7 +93,7 @@ public class Rappi {
 		FileReader fr = null;
 		BufferedReader br = null;
 
-		archive = new File("C:\\ZonasDeCobertura.txt");
+		archive = new File("src/files/ZonasDeCobertura.txt");
 		fr = new FileReader(archive);
 		br = new BufferedReader(fr);
 
@@ -102,13 +102,18 @@ public class Rappi {
 			for (int i = 0; i < casos; i++) {
 
 				String communeN = br.readLine();
-				int number = Integer.parseInt(br.readLine());
-				Commune added = new Commune(communeN, number);
 				String neigh = br.readLine();
 				String[] neighBorhood = neigh.split("	");
+				
+				int number = neighBorhood.length;
+				Commune added = new Commune(communeN, number);
+				addCommune(communeN, number);
+				String code = "";
 
 				for (int j = 0; j < neighBorhood.length; j++) {
-					added.addNeighB(neighBorhood[j], 0, 0);
+					code = communeN+""+j;
+					System.out.println(code);
+					added.addNeighB(neighBorhood[j], code, 0, 0);
 				}
 			}
 
@@ -122,20 +127,27 @@ public class Rappi {
 
 	}
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws FileNotFoundException {
 		Rappi r = new Rappi();
 
 		r.addDealer("145", "Camila", "1275684");
 		r.addDealer("146", "Camilo", "127567");
-		r.addDealer("155", "Crolin", "1275654");
-		r.addDealer("165", "Lina", "1276654");
-		r.addDealer("144", "yrna", "127654");
 
-		System.out.println(r.searchDealer("145").getId());
-		System.out.println(r.searchDealer("146").getId());
-		System.out.println(r.searchDealer("155").getId());
-		System.out.println(r.searchDealer("165").getId());
-		System.out.println(r.signIn("165", "1276654"));
+		r.txtCommuneNeighborhood();
+		
+		System.out.println(r.commune.getRoot().getValue().getName());
+		for (int i = 0; i < r.commune.getRoot().getValue().getNeigh().length; i++) {
+			System.out.println(r.commune.getRoot().getLeft().getRight().getValue().getName());
+		}
+		
+		
+	
+
+		System.out.println(r.searchDealer("145").getName());
+		System.out.println(r.searchDealer("146").getName());
+		System.out.println(r.dealeravl.getRoot().getRight().getValue().getName());
+		
+
 
 	}
 

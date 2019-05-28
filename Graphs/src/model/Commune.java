@@ -27,9 +27,9 @@ public class Commune {
 		this.name = name;
 	}
 
-	public void addNeighB(String nameN, double x, double y){
+	public void addNeighB(String nameN, String code,double x, double y){
 
-		Neighborhood add = new Neighborhood(nameN);
+		Neighborhood add = new Neighborhood(nameN, code);
 		add.setX(x);
 		add.setY(y);
 
@@ -99,14 +99,14 @@ public class Commune {
 	public static void main(String[] args)  {
 
 		Commune d = new Commune("2", 2);
-		
-		d.addNeighB("calipso", 2, 2);
-		d.addNeighB("flora", 1, 1);
-		
-		System.out.println(d.isElement("flora"));
-		System.out.println(d.toString());
-		System.out.println(d.search("flora"));
-		
+//		
+//		d.addNeighB("calipso", 2, 2);
+//		d.addNeighB("flora", 1, 1);
+//		
+//		System.out.println(d.isElement("flora"));
+//		System.out.println(d.toString());
+//		System.out.println(d.search("flora"));
+//		
 		
 	}
 
