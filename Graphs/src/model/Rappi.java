@@ -861,8 +861,8 @@ public class Rappi {
 //		System.out.println(r.codeN("220"));
 //
 //
-//		String[] s = r.severalDeliveries("22", "Pance", "22", "Ciudad Jardín", "17", "El Ingenio", "19",
-//				"Cuarto de Legua");
+//		String[] s = r.severalDeliveries("22", "Pance", "22", "Ciudad Jardín", "17", "El Ingenio", null,
+//				null);
 //
 //		for (int i = 0; i < s.length; i++) {
 //			System.out.println(s[i]);

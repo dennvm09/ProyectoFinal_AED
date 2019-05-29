@@ -178,7 +178,7 @@
                   <Font name="System Bold" size="14.0" />
                </font>
             </Label>
-            <Button fx:id="btRegistrar1" layoutX="126.0" layoutY="353.0" mnemonicParsing="false" onAction="#shortestPath" prefHeight="25.0" prefWidth="127.0" text="Camino" />
+            <Button fx:id="btRegistrar1" layoutX="126.0" layoutY="353.0" mnemonicParsing="false" onAction="#caminoCorto" prefHeight="25.0" prefWidth="127.0" text="Camino" />
             <TextArea fx:id="txtRecorrido1" editable="false" layoutX="14.0" layoutY="404.0" prefHeight="73.0" prefWidth="398.0" />
             <Label layoutX="21.0" layoutY="376.0" text="Recorrido:" underline="true">
                <font>
@@ -189,7 +189,7 @@
             <ChoiceBox fx:id="cbxBarrioOrigen1" layoutX="217.0" layoutY="99.0" onDragDetected="#barriosxComuna" prefHeight="25.0" prefWidth="150.0" />
             <ChoiceBox fx:id="cbxComunaDestino1" layoutX="14.0" layoutY="207.0" prefHeight="25.0" prefWidth="150.0" />
             <ChoiceBox fx:id="cbxBarrioDestino1" layoutX="186.0" layoutY="207.0" prefHeight="25.0" prefWidth="150.0" />
-            <Button fx:id="btEntregas" layoutX="362.0" layoutY="205.0" mnemonicParsing="false" text="entrega" />
+            <Button fx:id="btEntregas" layoutX="362.0" layoutY="205.0" mnemonicParsing="false" onAction="#registrarBarrios" text="entrega" />
             <Label layoutX="18.0" layoutY="247.0" text="Entregas:">
                <font>
                   <Font name="System Bold" size="12.0" />
