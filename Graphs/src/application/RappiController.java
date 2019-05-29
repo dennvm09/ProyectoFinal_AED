@@ -355,6 +355,7 @@ public class RappiController {
 		imgMapa.setOnMouseMoved(a ->x());
 	}
 	
+	
 	public void x() {
 		lblHola.setText("");
 	}
@@ -407,15 +408,12 @@ public class RappiController {
 			//INTENTAR PINTAR EL CAMINO
 	}
 
-	public void registrarBarrios(ActionEvent e) throws Exception {
-		
+	public void registrarBarrios(ActionEvent e) throws Exception {		
 		cantidadEntregas++;
 		String comuna;
 		String barrio;
 		
 		if(cantidadEntregas<=3) {
-			
-			
 			comuna = cbxComunaDestino1.getSelectionModel().getSelectedItem().toString();
 			barrio = cbxBarrioDestino1.getSelectionModel().getSelectedItem().toString();
 			
