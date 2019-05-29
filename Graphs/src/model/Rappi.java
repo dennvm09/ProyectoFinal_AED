@@ -681,15 +681,26 @@ public class Rappi {
 
 		if (c1 != null && neigh1 != null) {
 			arr1 = shortestTravel(communeI, neighborhoodI, c1, neigh1);
+			if (c2 != null && neigh2 != null) {
+				arr2 = shortestTravel(c1, neigh1, c2, neigh2);
+				
+				if (c3 != null && neigh3 != null) {
+					arr3 = shortestTravel(c2, neigh2, c3, neigh3);
+				}
+			}
 		}
-		if (c2 != null && neigh2 != null) {
-			arr2 = shortestTravel(c1, neigh1, c2, neigh2);
+		int lenghA = 0;
+		if(arr1 != null) {
+			lenghA += arr1.length;
 		}
-		if (c3 != null && neigh3 != null) {
-			arr3 = shortestTravel(c2, neigh2, c3, neigh3);
+		if(arr2 != null) {
+			lenghA += arr2.length - 1;
 		}
-
-		String[] finalA = new String[arr1.length + (arr2.length - 1) + (arr3.length - 1)];
+		if(arr3 != null) {
+			lenghA += arr3.length - 1;
+		}
+		
+		String[] finalA = new String[lenghA];
 
 		int g = 0;
 
@@ -720,7 +731,7 @@ public class Rappi {
 	}
 
 	
-	//Metod que retorna los codigos de los puntos 
+	//Metodo que retorna los codigos de los puntos 
 	public String[] getCodeR(String[] names) {
 		String[] communes = { "22", "5", "4", "3", "17", "8", "2", "19", "7", "9", "10", "11" };
 		String[] code = new String[names.length];
@@ -861,12 +872,11 @@ public class Rappi {
 //		System.out.println(r.codeN("220"));
 //
 //
-//		String[] s = r.severalDeliveries("22", "Pance", "22", "Ciudad Jardín", "17", "El Ingenio", "19",
-//				"Cuarto de Legua");
-//
-//		for (int i = 0; i < s.length; i++) {
-//			System.out.println(s[i]);
-//		}
+		String[] s = r.severalDeliveries("22", "Pance", "22", "Ciudad Jardín", "19","Cuarto de Legua", null, null);
+
+		for (int i = 0; i < s.length; i++) {
+			System.out.println(s[i]);
+		}
 //
 //		String[] names = { "Calima", "El Ingenio", "Guayaquil", "El Lido", "Club Campestre" };
 //		String[] g = r.getCodeR(names);
