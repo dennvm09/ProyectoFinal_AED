@@ -431,8 +431,8 @@ public class RappiController {
 	
 	public void caminoCorto(ActionEvent e) throws Exception {
 		
-		String comunaI = cbxComunaOrigen1.getSelectionModel().getSelectedItem().toString();
-		String barrioI = cbxBarrioDestino1.getSelectionModel().getSelectedItem().toString();
+		String [] comunaI = cbxComunaOrigen1.getSelectionModel().getSelectedItem().toString().split(" ");
+		String  barrioI = cbxBarrioOrigen1.getSelectionModel().getSelectedItem().toString();
 		
 		String c1 = comunas.get(0);
 		String b1 = barrios.get(0);
@@ -440,16 +440,18 @@ public class RappiController {
 		String c2 = comunas.get(1);
 		String b2 = barrios.get(1);
 		
+		System.out.println("Inicio "+comunaI[1]+" Entregas "+ cantidadEntregas + " Comuna 1" + c1 + "Barrio "+ b1);
+		System.out.println("Comuna 2" + c2 + "Barrio "+ b2);
 		
 		
 		String[] caminos = new String[barrios.size()];
 		
 		if(barrios.size() == 2) {
-			caminos = Main.variosPedidos(comunaI.split(" ")[1], barrioI, c1, b1, c2, b2, null, null);
+			caminos = Main.variosPedidos(comunaI[1], barrioI, c1, b1, c2, b2, null, null);
 		}else if(barrios.size() == 3) {
 			String c3 = comunas.get(2);
 			String b3 = barrios.get(2);
-			caminos = Main.variosPedidos(comunaI.split(" ")[1], barrioI, c1, b1, c2, b2, c3, b3);
+			caminos = Main.variosPedidos(comunaI[1], barrioI, c1, b1, c2, b2, c3, b3);
 		}
 		
 		String path = "";

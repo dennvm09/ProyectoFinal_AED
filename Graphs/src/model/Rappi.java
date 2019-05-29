@@ -838,7 +838,6 @@ public class Rappi {
 		Rappi r = new Rappi();
 
 		r.txtCommuneNeighborhood();
-
 		r.addNeighborhod();
 		r.addEdges();
 
