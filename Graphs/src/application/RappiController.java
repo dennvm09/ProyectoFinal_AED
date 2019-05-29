@@ -380,6 +380,7 @@ public class RappiController {
 				System.out.println("Me seleccionaron 2");
 				pane1.setVisible(false);
 				pane2.setVisible(true);
+				
 			}
 		}
 	}
