@@ -10,12 +10,10 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextArea;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.DragEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.shape.Circle;
@@ -46,6 +44,26 @@ public class RappiController {
 	private ImageView imgMapa;
 	@FXML
 	private Label lblHola;
+	
+	@FXML
+	private Pane pane2;
+	@FXML
+	private ChoiceBox<String> cbxComunaOrigen1;
+	@FXML
+	private ChoiceBox<String> cbxBarrioOrigen1;
+	@FXML
+	private ChoiceBox<String> cbxComunaDestino1;
+	@FXML
+	private ChoiceBox<String> cbxBarrioDestino1;
+	@FXML
+	private Button btRegistrar1;
+	@FXML
+	private TextArea txtRecorrido1;
+	@FXML
+	private TextArea txtEntregas;
+	@FXML
+	private Button btEntregas;
+	
 	
 	
 	//Circulos que representan los barrios
@@ -178,6 +196,7 @@ public class RappiController {
 		rbtPedido1.setOnAction(e-> checkers(1));
 		rbtPedido2.setOnAction(e-> checkers(-1));
 		pane1.setVisible(false);
+		pane2.setVisible(false);
 		rellenarComunas();
 	}
 	
@@ -316,12 +335,15 @@ public class RappiController {
 				rbtPedido2.setSelected(false);
 				System.out.println("Me seleccionaron 1");
 				pane1.setVisible(true);
+				pane2.setVisible(false);
+				
 			}
 		}else {
 			if(rbtPedido2.isSelected()) {
 				rbtPedido1.setSelected(false);
 				System.out.println("Me seleccionaron 2");
 				pane1.setVisible(false);
+				pane2.setVisible(true);
 			}
 		}
 	}
