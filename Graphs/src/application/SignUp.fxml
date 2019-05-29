@@ -15,17 +15,17 @@
             <Image url="@../images/fondo.png" />
          </image>
       </ImageView>
-      <Label fx:id="lblId" layoutX="19.0" layoutY="58.0" text="Identification:" textFill="WHITE">
+      <Label fx:id="lblId" layoutX="19.0" layoutY="58.0" text="Identification:">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </Label>
-      <Label fx:id="lblPassword" layoutX="19.0" layoutY="171.0" text="Password:" textFill="WHITE">
+      <Label fx:id="lblPassword" layoutX="19.0" layoutY="171.0" text="Password:">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </Label>
-      <Label fx:id="lblName" layoutX="19.0" layoutY="113.0" text="Complete name:" textFill="WHITE">
+      <Label fx:id="lblName" layoutX="19.0" layoutY="113.0" text="Complete name:">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
@@ -33,7 +33,7 @@
       <TextField fx:id="txtId" layoutX="19.0" layoutY="79.0" prefHeight="25.0" prefWidth="195.0" />
       <TextField fx:id="txtName" layoutX="19.0" layoutY="134.0" prefHeight="25.0" prefWidth="195.0" />
       <TextField fx:id="txtPassword" layoutX="19.0" layoutY="191.0" prefHeight="25.0" prefWidth="195.0" />
-      <Label fx:id="lblTitulo" layoutX="19.0" layoutY="11.0" text="Create your personal account" textFill="WHITE">
+      <Label fx:id="lblTitulo" layoutX="19.0" layoutY="11.0" text="Create your personal account">
          <font>
             <Font name="System Bold" size="20.0" />
          </font>

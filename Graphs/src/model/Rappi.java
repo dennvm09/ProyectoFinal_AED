@@ -682,9 +682,9 @@ public class Rappi {
 		Rappi r = new Rappi();
 
 		r.txtCommuneNeighborhood();
-
 		r.addNeighborhod();
 		r.addEdges();
+//		r.addEdges();
 
 //		String[] s = r.shortestTravel("22", "Ciudad Jardín", "17", "El Ingenio");
 //		for (int i = 0; i < s.length; i++) {
@@ -716,16 +716,32 @@ public class Rappi {
 //		System.out.println(r.codeN("220"));
 //
 //
-		String[] s = r.severalDeliveries("22", "Pance", "22", "Ciudad Jardín", "19","Cuarto de Legua", null, null);
 
-		for (int i = 0; i < s.length; i++) {
-			System.out.println(s[i]);
-		}
-		
+//		String[] s = r.severalDeliveries("22", "Pance", "22", "Ciudad Jardín", "19","Cuarto de Legua", null, null);
+//
+//		for (int i = 0; i < s.length; i++) {
+//			System.out.println(s[i]);
+//		}
+//		
 		
 //		for (int i = 0; i < l.length; i++) {
 //			System.out.println(l[i]);
 //		}
+
+
+////		String[] s = r.severalDeliveries("22", "Pance", "22", "Ciudad Jardín", "17", "El Ingenio", null,
+////				null);
+////
+////		for (int i = 0; i < s.length; i++) {
+////			System.out.println(s[i]);
+////		}
+
+//		String[] s = r.severalDeliveries("22", "Pance", "22", "Ciudad Jardín", "19","Cuarto de Legua", null, null);
+//
+//		for (int i = 0; i < s.length; i++) {
+//			System.out.println(s[i]);
+
+
 //
 //		String[] names = { "Calima", "El Ingenio", "Guayaquil", "El Lido", "Club Campestre" };
 //		String[] g = r.getCodeR(names);

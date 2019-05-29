@@ -1,6 +1,9 @@
 package application;
 
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
+
+import javax.swing.JOptionPane;
 
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -188,9 +191,11 @@ public class RappiController {
 	@FXML
 	private Circle b84;
 	
-	@FXML
-	private Button cl;
+	private int cantidadEntregas = 0;
+	private String entregas = "";
 
+	private ArrayList<String> barrios = new ArrayList<>();
+	private ArrayList<String> comunas = new ArrayList<>();
 	
 	public void initialize() {
 		rbtPedido1.setOnAction(e-> checkers(1));
@@ -205,6 +210,8 @@ public class RappiController {
 		items.addAll("Comuna 2", "Comuna 3", "Comuna 4", "Comuna 5", "Comuna 7", "Comuna 8", "Comuna 9", "Comuna 10", "Comuna 11", "Comuna 17", "Comuna 19", "Comuna 22");
 		cbxComunaDestino.setItems(items);
 		cbxComunaOrigen.setItems(items);
+		cbxComunaDestino1.setItems(items);
+		cbxComunaOrigen1.setItems(items);
 	}
 
 	public void barriosxComuna() {
@@ -230,6 +237,29 @@ public class RappiController {
 				rellenarBarriosDestino(barrios);
 			}
 		});
+		cbxComunaOrigen1.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
+			@Override
+			public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+				// TODO Auto-generated method stub
+				String [] c = newValue.split(" ");
+				String comuna = c[1];
+				
+				String[] barrios = Main.barriosxComuna(comuna);
+				rellenarBarriosOrigen(barrios);
+
+			}	
+		});
+		cbxComunaDestino1.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
+			@Override
+			public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+				// TODO Auto-generated method stub
+				String [] c = newValue.split(" ");
+				String comuna = c[1];
+				String[] barrios = Main.barriosxComuna(comuna);
+				rellenarBarriosDestino(barrios);
+			}
+		});
+	
 	}
 	
 	public void rellenarBarriosOrigen(String[] barrios) {
@@ -239,6 +269,8 @@ public class RappiController {
 			items.addAll(barrios[i]);
 		}
 		cbxBarrioOrigen.setItems(items);
+		cbxBarrioOrigen1.setItems(items);
+		
 	}
 	
 	public void rellenarBarriosDestino(String[] barrios) {
@@ -248,6 +280,9 @@ public class RappiController {
 			items.addAll(barrios[i]);
 		}
 		cbxBarrioDestino.setItems(items);
+		cbxBarrioDestino1.setItems(items);
+
+		
 	}
 	
 	public void mostrarBarrios(MouseEvent e) {
@@ -320,6 +355,7 @@ public class RappiController {
 		imgMapa.setOnMouseMoved(a ->x());
 	}
 	
+	
 	public void x() {
 		lblHola.setText("");
 	}
@@ -372,6 +408,56 @@ public class RappiController {
 			//INTENTAR PINTAR EL CAMINO
 	}
 
+	public void registrarBarrios(ActionEvent e) throws Exception {		
+		cantidadEntregas++;
+		String comuna;
+		String barrio;
+		
+		if(cantidadEntregas<=3) {
+			comuna = cbxComunaDestino1.getSelectionModel().getSelectedItem().toString();
+			barrio = cbxBarrioDestino1.getSelectionModel().getSelectedItem().toString();
+			
+			entregas += "Entrega " + cantidadEntregas + "\n" + comuna + " --- " + barrio + "\n";
+			txtEntregas.setText(entregas);
+			comunas.add(comuna.split(" ")[1]);
+			barrios.add(barrio);
+		}else {
+			JOptionPane.showMessageDialog(null, "Sólo se permiten como máximo 3 entregas por rappitendero.");
+		}
 	
+	}
+	
+	public void caminoCorto(ActionEvent e) throws Exception {
+		
+		String [] comunaI = cbxComunaOrigen1.getSelectionModel().getSelectedItem().toString().split(" ");
+		String  barrioI = cbxBarrioOrigen1.getSelectionModel().getSelectedItem().toString();
+		
+		String c1 = comunas.get(0);
+		String b1 = barrios.get(0);
+		
+		String c2 = comunas.get(1);
+		String b2 = barrios.get(1);
+		
+		System.out.println("Inicio "+comunaI[1]+" Entregas "+ cantidadEntregas + " Comuna 1" + c1 + "Barrio "+ b1);
+		System.out.println("Comuna 2" + c2 + "Barrio "+ b2);
+		
+		
+		String[] caminos = new String[barrios.size()];
+		
+		if(barrios.size() == 2) {
+			caminos = Main.variosPedidos(comunaI[1], barrioI, c1, b1, c2, b2, null, null);
+		}else if(barrios.size() == 3) {
+			String c3 = comunas.get(2);
+			String b3 = barrios.get(2);
+			caminos = Main.variosPedidos(comunaI[1], barrioI, c1, b1, c2, b2, c3, b3);
+		}
+		
+		String path = "";
+		for(int i = 0; i < caminos.length; i++) {
+			path += (i+1) + ". " + caminos[i] + "\n";
+		}
+		
+		txtRecorrido1.setText(path);
+	}
 
 }
