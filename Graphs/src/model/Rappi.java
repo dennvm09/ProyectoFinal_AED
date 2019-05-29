@@ -779,28 +779,28 @@ public class Rappi {
 		r.addNeighborhod();
 		r.addEdges();
 		
-//
-//		System.out.println(r.neighGrafo.getNode(r.searchCommune("22").search("Ciudad Jardín")));
-//		System.out.println(r.neighGrafo.getNodes().size());
-//
-//		//System.out.println(r.codeN("175"));
+
+		System.out.println(r.neighGrafo.getNode(r.searchCommune("22").search("Ciudad Jardín")));
+		System.out.println(r.neighGrafo.getNodes().size());
+
+		//System.out.println(r.codeN("175"));
+		
+		//r.addEdgesM();
 //		
-//		//r.addEdgesM();
-////		
-////		double m =r.neighB.getDistance(r.searchCommune("5").search("Chiminangos"), r.searchCommune("4").search("Calima"));
-////		System.out.println(r.searchCommune("17").toString());
-//		
-//		
-//	//	System.out.println(m);
-//		
-//		
-//		String[] j = r.shortestTravel("22", "Club Campestre", "17", "Lilí");
-//		
-//		for (int i = 0; i < j.length; i++) {
-//			System.out.println(j[i]);
-//		}
-//
-//		System.out.println(r.codeN("220"));
+//		double m =r.neighB.getDistance(r.searchCommune("5").search("Chiminangos"), r.searchCommune("4").search("Calima"));
+//		System.out.println(r.searchCommune("17").toString());
+		
+		
+	//	System.out.println(m);
+		
+		
+		String[] j = r.shortestTravel("22", "Club Campestre", "17", "Lilí");
+		
+		for (int i = 0; i < j.length; i++) {
+			System.out.println(j[i]);
+		}
+
+		System.out.println(r.codeN("220"));
 
 		
 //		System.out.println(r.searchDealer("145").getName());
