@@ -54,6 +54,10 @@ public class SignInController {
 		btEntrar.setStyle(HOVERED_BUTTON_STYLE);
 		btEntrar.setStyle(IDLE_BUTTON_STYLE);
 		
+		btSignUp.setGraphic(new ImageView(new Image("images/signup.png")));
+		btSignUp.setStyle(HOVERED_BUTTON_STYLE);
+		btSignUp.setStyle(IDLE_BUTTON_STYLE);
+		
 	}
 	
 	@FXML

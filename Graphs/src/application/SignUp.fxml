@@ -38,11 +38,11 @@
             <Font name="System Bold" size="20.0" />
          </font>
       </Label>
-      <ImageView fitHeight="30.0" fitWidth="123.0" layoutX="266.0" layoutY="163.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="30.0" fitWidth="123.0" layoutX="263.0" layoutY="163.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/bigoteb.png" />
          </image>
       </ImageView>
-      <Button fx:id="btCreate" layoutX="262.0" layoutY="101.0" mnemonicParsing="false" onAction="#iniciarSesion" text="Create account" />
+      <Button fx:id="btCreate" layoutX="262.0" layoutY="101.0" mnemonicParsing="false" onAction="#iniciarSesion" prefHeight="25.0" prefWidth="95.0" />
    </children>
 </Pane>
