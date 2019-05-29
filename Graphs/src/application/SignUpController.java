@@ -73,7 +73,6 @@ public class SignUpController {
 		System.out.println("ID: "+id+"NOMBRE: "+name);
 		JOptionPane.showMessageDialog(null, "La cuenta fue creada correctamente.");
 		Main.signUpDealer(id, name, password);	
-		JOptionPane.showMessageDialog(null, "La cuenta fue creada correctamente.");
 		
 	}
 }

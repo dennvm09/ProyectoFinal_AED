@@ -195,8 +195,6 @@ public class Rappi {
 		}
 	}
 
-	
-
 	public void addEdges() throws Exception {
 
 		// Comuna 22 ciudad jardin - finca
@@ -445,7 +443,6 @@ public class Rappi {
 		return dijsk;
 	}
 
-	
 	//Metodo de varios recorridos 
 	public String[] severalDeliveries(String communeI, String neighborhoodI, String c1, String neigh1, String c2,
 			String neigh2, String c3, String neigh3) throws Exception {
@@ -505,7 +502,6 @@ public class Rappi {
 		return finalA;
 	}
 
-	
 	//Metodo que retorna los codigos de los puntos 
 	public String[] getCodeR(String[] names) {
 		String[] communes = { "22", "5", "4", "3", "17", "8", "2", "19", "7", "9", "10", "11" };
@@ -636,7 +632,6 @@ public class Rappi {
 
 	}
 	
-
 	public void txtCommuneNeighborhood() throws FileNotFoundException {
 
 		File archive = null;

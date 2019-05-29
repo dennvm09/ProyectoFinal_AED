@@ -209,9 +209,13 @@ public class RappiController {
 		pane2.setVisible(false);
 		rellenarComunas();
 		
-		btRegistrar.setGraphic(new ImageView(new Image("images/create.png")));
+		btRegistrar.setGraphic(new ImageView(new Image("images/camino.png")));
 		btRegistrar.setStyle(HOVERED_BUTTON_STYLE);
 		btRegistrar.setStyle(IDLE_BUTTON_STYLE);
+		
+		btRegistrar1.setGraphic(new ImageView(new Image("images/camino.png")));
+		btRegistrar1.setStyle(HOVERED_BUTTON_STYLE);
+		btRegistrar1.setStyle(IDLE_BUTTON_STYLE);
 	}
 	
 	public void rellenarComunas() {
