@@ -36,6 +36,14 @@ public class Main extends Application {
 	
 	public static void signUpDealer(String id, String name, String password) {
 		rappi.addDealer(id, name, password);
+		rappi.saveDealer(id, name, password);
+	}
+	
+	public static boolean iniciar(String id, String password) {
+		rappi.loadDealer();
+		boolean entrar = rappi.signIn(id, password);
+		
+		return entrar;
 	}
 	
 	public static String searchNeighborhood(String cod) {

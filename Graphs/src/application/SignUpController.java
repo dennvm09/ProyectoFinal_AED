@@ -12,6 +12,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
@@ -40,11 +41,13 @@ public class SignUpController {
 	@FXML
 	private ImageView imgFondo;
 
-
-
+	 private static final String IDLE_BUTTON_STYLE = "-fx-background-color: transparent;"; 
+	 private static final String HOVERED_BUTTON_STYLE = "-fx-background-color: -fx-shadow-highlight-color, -fx-outer-border, -fx-inner-border, -fx-body-color;";
 	
 	public void initialize() {
-		
+		btCreate.setGraphic(new ImageView(new Image("images/create.png")));
+		btCreate.setStyle(HOVERED_BUTTON_STYLE);
+		btCreate.setStyle(IDLE_BUTTON_STYLE);
 	}
 	
 	@FXML
@@ -70,7 +73,6 @@ public class SignUpController {
 		System.out.println("ID: "+id+"NOMBRE: "+name);
 		JOptionPane.showMessageDialog(null, "La cuenta fue creada correctamente.");
 		Main.signUpDealer(id, name, password);	
-		JOptionPane.showMessageDialog(null, "La cuenta fue creada correctamente.");
 		
 	}
 }

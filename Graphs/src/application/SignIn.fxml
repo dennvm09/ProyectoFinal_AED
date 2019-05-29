@@ -33,11 +33,11 @@
             <Image url="@../images/logorappi.png" />
          </image>
       </ImageView>
-      <Label layoutX="41.0" layoutY="250.0" text="New in Rappi?">
+      <Label layoutX="41.0" layoutY="246.0" text="New in Rappi?">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </Label>
-      <Button fx:id="btSignUp" layoutX="142.0" layoutY="247.0" mnemonicParsing="false" onAction="#nuevaCuenta" prefHeight="25.0" prefWidth="94.0" text="sign up" />
+      <Button fx:id="btSignUp" layoutX="132.0" layoutY="243.0" mnemonicParsing="false" onAction="#nuevaCuenta" prefHeight="25.0" prefWidth="94.0" />
    </children>
 </Pane>

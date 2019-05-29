@@ -16,6 +16,7 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextArea;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
@@ -23,6 +24,10 @@ import javafx.scene.shape.Circle;
 
 public class RappiController {
 
+	
+	private static final String IDLE_BUTTON_STYLE = "-fx-background-color: transparent;"; 
+    private static final String HOVERED_BUTTON_STYLE = "-fx-background-color: -fx-shadow-highlight-color, -fx-outer-border, -fx-inner-border, -fx-body-color;";
+	
 	@FXML
 	private Pane pane1;
 	@FXML
@@ -203,6 +208,14 @@ public class RappiController {
 		pane1.setVisible(false);
 		pane2.setVisible(false);
 		rellenarComunas();
+		
+		btRegistrar.setGraphic(new ImageView(new Image("images/camino.png")));
+		btRegistrar.setStyle(HOVERED_BUTTON_STYLE);
+		btRegistrar.setStyle(IDLE_BUTTON_STYLE);
+		
+		btRegistrar1.setGraphic(new ImageView(new Image("images/camino.png")));
+		btRegistrar1.setStyle(HOVERED_BUTTON_STYLE);
+		btRegistrar1.setStyle(IDLE_BUTTON_STYLE);
 	}
 	
 	public void rellenarComunas() {
