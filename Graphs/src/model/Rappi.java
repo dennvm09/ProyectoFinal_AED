@@ -1,13 +1,19 @@
 package model;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.Collections;
+import java.util.HashMap;
 
 import avl.*;
 import bst.DennNode;
+import graph.Edge;
 import graph.Graph;
 import graph.GraphM;
 import graph.ListWeight;
@@ -64,6 +70,8 @@ public class Rappi {
 	// methods add Commune and Dealer
 	public void addDealer(String id, String name, String password) {
 		dealeravl.addNode(id, new Dealer(id, name, password));
+		saveDealer(id, name, password);
+		
 		// System.out.println(dealeravl.getRoot().getValue().getName());
 
 	}
@@ -107,83 +115,6 @@ public class Rappi {
 		search.setName(name);
 
 	}
-
-	// agregar barrios
-//	public void addNeighborhodM() {
-//
-//		// Barrios de la comuna 22
-//		Commune c22 = searchCommune("22");
-//
-//		for (int i = 0; i < c22.getNeigh().length; i++) {
-//			neighB.addNodeM(c22.getNeigh()[i]);
-//		}
-//
-//		// Barrios de la comuna 5
-//		Commune c5 = searchCommune("5");
-//		for (int i = 0; i < c5.getNeigh().length; i++) {
-//			neighB.addNodeM(c5.getNeigh()[i]);
-//		}
-//
-//		// Barrios de la comuna 4
-//		Commune c4 = searchCommune("4");
-//		for (int i = 0; i < c4.getNeigh().length; i++) {
-//			neighB.addNodeM(c4.getNeigh()[i]);
-//		}
-//
-//		// Barrios de la comuna 3
-//		Commune c3 = searchCommune("3");
-//		for (int i = 0; i < c3.getNeigh().length; i++) {
-//			neighB.addNodeM(c3.getNeigh()[i]);
-//		}
-//
-//		// Barrios de la comuna 17
-//		Commune c17 = searchCommune("17");
-//		for (int i = 0; i < c17.getNeigh().length; i++) {
-//			neighB.addNodeM(c17.getNeigh()[i]);
-//		}
-//
-//		// Barrios de la comuna 8
-//		Commune c8 = searchCommune("8");
-//		for (int i = 0; i < c8.getNeigh().length; i++) {
-//			neighB.addNodeM(c8.getNeigh()[i]);
-//		}
-//
-//		// Barrios de la comuna 2
-//		Commune c2 = searchCommune("2");
-//		for (int i = 0; i < c2.getNeigh().length; i++) {
-//			neighB.addNodeM(c2.getNeigh()[i]);
-//		}
-//
-//		// Barrios de la comuna 19
-//		Commune c19 = searchCommune("19");
-//		for (int i = 0; i < c19.getNeigh().length; i++) {
-//			neighB.addNodeM(c19.getNeigh()[i]);
-//		}
-//
-//		// Barrios de la comuna 7
-//		Commune c7 = searchCommune("7");
-//		for (int i = 0; i < c7.getNeigh().length; i++) {
-//			neighB.addNodeM(c7.getNeigh()[i]);
-//		}
-//
-//		// Barrios de la comuna 9
-//		Commune c9 = searchCommune("9");
-//		for (int i = 0; i < c9.getNeigh().length; i++) {
-//			neighB.addNodeM(c9.getNeigh()[i]);
-//		}
-//
-//		// Barrios de la comuna 10
-//		Commune c10 = searchCommune("10");
-//		for (int i = 0; i < c10.getNeigh().length; i++) {
-//			neighB.addNodeM(c10.getNeigh()[i]);
-//		}
-//
-//		// Barrios de la comuna 11
-//		Commune c11 = searchCommune("11");
-//		for (int i = 0; i < c11.getNeigh().length; i++) {
-//			neighB.addNodeM(c11.getNeigh()[i]);
-//		}
-//	}
 
 	public void addNeighborhod() throws Exception {
 
@@ -264,163 +195,7 @@ public class Rappi {
 		}
 	}
 
-	// agregar aristas
-//	public void addEdgesM() {
-//
-//		// Comuna 22 ciudad jardin - finca
-//		neighB.addEdge(searchCommune("22").search("Ciudad Jardín"), searchCommune("22").search("La finca"), 2.1);
-//		// Ciudad Jardin - club campestre
-//		neighB.addEdge(searchCommune("22").search("Ciudad Jardín"), searchCommune("22").search("Club Campestre"), 1.4);
-//		// finca - pance
-//		neighB.addEdge(searchCommune("22").search("La finca"), searchCommune("22").search("Pance"), 16.6);
-//		// club campestre - cañasgordas
-//		neighB.addEdge(searchCommune("22").search("Club Campestre"), searchCommune("22").search("Cañasgordas"), 3.7);
-//		// pance - cañasgordas
-//		neighB.addEdge(searchCommune("22").search("Pance"), searchCommune("22").search("Cañasgordas"), 16.2);
-//
-//		// Comuna 5 
-//		neighB.addEdge(searchCommune("5").search("Salomia"), searchCommune("5").search("El Sena"), 1.4);
-//		
-//		neighB.addEdge(searchCommune("5").search("El Sena"), searchCommune("5").search("Los Andes"), 1.5);
-//		
-//		neighB.addEdge(searchCommune("5").search("Los Andes"), searchCommune("5").search("Chiminangos"), 1.4);
-//		
-//		neighB.addEdge(searchCommune("5").search("Los Andes"), searchCommune("5").search("Brisas del Guabito"), 2.5);
-//		
-//		neighB.addEdge(searchCommune("5").search("Salomia"), searchCommune("5").search("Brisas del Guabito"), 2.5);
-//
-//		neighB.addEdge(searchCommune("4").search("Calima"), searchCommune("5").search("Chiminangos"), 2.5);
-//
-//		// comuna 4
-//		neighB.addEdge(searchCommune("4").search("Calima"), searchCommune("4").search("Flora Industrial"), 2.5);
-//
-//		neighB.addEdge(searchCommune("4").search("Manzanares"), searchCommune("4").search("Las Delicias"), 1);
-//
-//		neighB.addEdge(searchCommune("4").search("Manzanares"), searchCommune("4").search("Flora Industrial"), 1);
-//
-//		neighB.addEdge(searchCommune("3").search("La Merced"), searchCommune("4").search("Flora Industrial"), 1.5);
-//
-//		neighB.addEdge(searchCommune("3").search("La Merced"), searchCommune("4").search("Calima"), 2.3);
-//
-//		// Comuna 3
-//		neighB.addEdge(searchCommune("3").search("El Peñón"), searchCommune("3").search("El Nacional"), 2.2);
-//
-//		neighB.addEdge(searchCommune("3").search("El Peñón"), searchCommune("3").search("San Nicolás"), 2.2);
-//
-//		neighB.addEdge(searchCommune("3").search("La Merced"), searchCommune("3").search("El Nacional"), 2.1);
-//
-//		neighB.addEdge(searchCommune("3").search("La Merced"), searchCommune("3").search("San Nicolás"), 3.1);
-//		
-//		
-//		neighB.addEdge(searchCommune("3").search("El Peñón"), searchCommune("2").search("Normandía"), 1.5);
-//		
-//		neighB.addEdge(searchCommune("2").search("Centenario"), searchCommune("2").search("Normandía"), 1);
-//		
-//		neighB.addEdge(searchCommune("2").search("Centenario"), searchCommune("3").search("San Nicolás"), 3.2);
-//		
-//		
-//		//Comuna 17
-//		
-//		neighB.addEdge(searchCommune("17").search("Lilí"), searchCommune("22").search("Club Campestre"), 3);
-//		
-//		neighB.addEdge(searchCommune("17").search("Lilí"), searchCommune("17").search("El Ingenio"), 2.5);
-//		
-//		neighB.addEdge(searchCommune("17").search("Caney"), searchCommune("17").search("El Ingenio"), 2.2);
-//		
-//		neighB.addEdge(searchCommune("17").search("Capri"), searchCommune("17").search("El Ingenio"), 2.4);
-//		
-//		neighB.addEdge(searchCommune("17").search("Capri"), searchCommune("17").search("El Limonar"), 2.5);
-//		
-//		neighB.addEdge(searchCommune("17").search("La Hacienda"), searchCommune("17").search("El Limonar"), 1.2);
-//		
-//		neighB.addEdge(searchCommune("17").search("La Hacienda"), searchCommune("17").search("El Ingenio"), 1.7);
-//		
-//		//comuna 8
-//		
-//		neighB.addEdge(searchCommune("8").search("Atanasio Girardot"), searchCommune("8").search("Chapinero"), 1);
-//		
-//		neighB.addEdge(searchCommune("8").search("Atanasio Girardot"), searchCommune("8").search("Las Ámericas"), 1.2);
-//		
-//		neighB.addEdge(searchCommune("8").search("El Troncal"), searchCommune("8").search("Las Ámericas"), 1);
-//		
-//		neighB.addEdge(searchCommune("8").search("La Base"), searchCommune("8").search("Las Ámericas"), 1.5);
-//		
-//		
-//		//comuna 2
-//		
-//		neighB.addEdge(searchCommune("2").search("Menga"), searchCommune("2").search("Arroyohondo"), 2.3);
-//		
-//		neighB.addEdge(searchCommune("2").search("Menga"), searchCommune("2").search("Vipasa"), 3.1);
-//		
-//		neighB.addEdge(searchCommune("2").search("Ciudad los Álamos"), searchCommune("2").search("Vipasa"), 1.8);
-//		
-//		neighB.addEdge(searchCommune("2").search("Ciudad los Álamos"), searchCommune("4").search("Calima"), 1.4);
-//		
-//		neighB.addEdge(searchCommune("2").search("Ciudad los Álamos"), searchCommune("4").search("Flora Industrial"), 2.1);
-//		
-//		
-//		//Comuna 19
-//		neighB.addEdge(searchCommune("19").search("Pampalinda"), searchCommune("17").search("El Limonar"), 2.9);
-//		
-//		neighB.addEdge(searchCommune("19").search("Pampalinda"), searchCommune("19").search("Cuarto de Legua"), 1);
-//		
-//		neighB.addEdge(searchCommune("19").search("El Lido"), searchCommune("19").search("Cuarto de Legua"), 1.9);
-//		
-//		neighB.addEdge(searchCommune("19").search("El Lido"), searchCommune("19").search("Tequendama"), 1.1);
-//		
-//		
-//		//Comuna 7
-//		neighB.addEdge(searchCommune("7").search("Los Pinos"), searchCommune("7").search("Las Ceibas"), 1);
-//		
-//		neighB.addEdge(searchCommune("7").search("San Marino"), searchCommune("7").search("Las Ceibas"), 4);
-//		
-//		neighB.addEdge(searchCommune("7").search("San Marino"), searchCommune("7").search("Los Pinos"), 3.5);
-//		
-//		neighB.addEdge(searchCommune("8").search("La Base"), searchCommune("7").search("Los Pinos"), 1.4);
-//		
-//		
-//		neighB.addEdge(searchCommune("7").search("San Marino"), searchCommune("5").search("Los Andes"), 4.7);
-//		
-//		
-//		//Comuna 9
-//		
-//		neighB.addEdge(searchCommune("9").search("Guayaquil"), searchCommune("9").search("Bretaña"), 1.1);
-//		
-//		neighB.addEdge(searchCommune("9").search("Guayaquil"), searchCommune("9").search("Belálcazar"), 1.3);
-//		
-//		neighB.addEdge(searchCommune("3").search("San Nicolás"), searchCommune("9").search("Bretaña"), 3.2);
-//		
-//		neighB.addEdge(searchCommune("9").search("Guayaquil"), searchCommune("9").search("Aranjuez"), 1);
-//		
-//		neighB.addEdge(searchCommune("9").search("Belálcazar"), searchCommune("9").search("Aranjuez"), 1.3);
-//		
-//		
-//		//comuna 10
-//		neighB.addEdge(searchCommune("10").search("Departamental"), searchCommune("19").search("Tequendama"), 2.1);
-//		
-//		neighB.addEdge(searchCommune("10").search("Departamental"), searchCommune("10").search("El Guabal"), 1.4);
-//		
-//		neighB.addEdge(searchCommune("10").search("El Dorado"), searchCommune("10").search("El Guabal"), 1.5);
-//		
-//		neighB.addEdge(searchCommune("10").search("El Dorado"), searchCommune("10").search("Santa Elena"), 1.5);
-//		
-//		
-//		neighB.addEdge(searchCommune("11").search("La Independecia"), searchCommune("10").search("El Guabal"), 1.7);
-//		
-//		neighB.addEdge(searchCommune("9").search("Guayaquil"), searchCommune("10").search("Santa Elena"), 2.4);
-//		
-//		neighB.addEdge(searchCommune("11").search("San Carlos"), searchCommune("10").search("Santa Elena"), 2.3);
-//		
-//		
-//		//Comuna 11
-//		neighB.addEdge(searchCommune("11").search("La Independecia"), searchCommune("11").search("La Esperanza"), 1);
-//		
-//		neighB.addEdge(searchCommune("11").search("La Independecia"), searchCommune("11").search("Ciudad Modelo"), 1);
-//		
-//		neighB.addEdge(searchCommune("11").search("La Esperanza"), searchCommune("11").search("Ciudad Modelo"), 1);
-//		
-//
-//	}
+	
 
 	public void addEdges() throws Exception {
 
@@ -768,6 +543,74 @@ public class Rappi {
 		}
 
 	}
+	
+	public void saveDealer(String id, String name, String password) {
+		
+		FileWriter flwriter = null;
+		
+		try {
+			//crea el flujo para escribir en el archivo
+			flwriter = new FileWriter("src/files/Dealer.txt");
+	
+			//crea un buffer o flujo intermedio antes de escribir directamente en el archivo
+			BufferedWriter bfwriter = new BufferedWriter(flwriter);
+			
+				//escribe los datos en el archivo
+				bfwriter.write(id + "," + name + "," +password + "\n");
+		
+			// cierra el buffer intermedio
+			bfwriter.close();
+			System.out.println("Archivo creado satisfactoriamente..");
+ 
+		} catch (IOException e) {
+			e.printStackTrace();
+		} finally {
+			if (flwriter != null) {
+				try {//cierra el flujo principal
+					flwriter.close();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+		
+	}
+	
+	public Dealer  loadDealer() {
+		
+		String texto="";
+		Dealer c = null;
+		Dealer dealer = null;
+		try{
+		//Creamos un archivo FileReader que obtiene lo que tenga el archivo
+			FileReader lector=new FileReader("src/files/Dealer.txt");
+
+		//El contenido de lector se guarda en un BufferedReader
+			BufferedReader contenido=new BufferedReader(lector);
+			String linea= contenido.readLine();
+			String[] str=linea.split(",");
+		
+		//Con el siguiente ciclo extraemos todo el contenido del objeto "contenido" y lo mostramos
+			while(linea!=null){
+			
+				c = new Dealer(str[0].toString(), str[1].toString(), str[2].toString());
+				
+				if(signIn(str[0].toString(), str[2].toString()) == true) {
+					dealer = searchDealer(c.getId());
+					System.out.println(str[0].toString());
+					
+					return dealer;
+				}
+				
+			}
+			lector.close();
+			contenido.close();
+		}catch(Exception e){
+			System.out.println("Error al leer");
+		}
+		return dealer;
+		
+	}
 
 	public String codeN(String code) {
 
@@ -792,6 +635,7 @@ public class Rappi {
 		return r;
 
 	}
+	
 
 	public void txtCommuneNeighborhood() throws FileNotFoundException {
 
@@ -877,6 +721,11 @@ public class Rappi {
 		for (int i = 0; i < s.length; i++) {
 			System.out.println(s[i]);
 		}
+		
+		
+//		for (int i = 0; i < l.length; i++) {
+//			System.out.println(l[i]);
+//		}
 //
 //		String[] names = { "Calima", "El Ingenio", "Guayaquil", "El Lido", "Club Campestre" };
 //		String[] g = r.getCodeR(names);
