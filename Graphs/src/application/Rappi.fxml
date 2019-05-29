@@ -65,7 +65,7 @@
                   <Font name="System Bold" size="14.0" />
                </font>
             </Label>
-            <Button fx:id="btRegistrar" layoutX="126.0" layoutY="274.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="127.0" text="Registrar" />
+            <Button fx:id="btRegistrar" layoutX="126.0" layoutY="274.0" mnemonicParsing="false" onAction="#shortestPath" prefHeight="25.0" prefWidth="127.0" text="Camino" />
             <TextArea fx:id="txtRecorrido" editable="false" layoutX="14.0" layoutY="362.0" prefHeight="73.0" prefWidth="398.0" />
             <Label layoutX="21.0" layoutY="334.0" text="Recorrido:" underline="true">
                <font>
@@ -76,7 +76,6 @@
             <ChoiceBox fx:id="cbxBarrioOrigen" layoutX="217.0" layoutY="99.0" onDragDetected="#barriosxComuna" prefHeight="25.0" prefWidth="150.0" />
             <ChoiceBox fx:id="cbxComunaDestino" layoutX="14.0" layoutY="221.0" prefHeight="25.0" prefWidth="150.0" />
             <ChoiceBox fx:id="cbxBarrioDestino" layoutX="217.0" layoutY="221.0" prefWidth="150.0" />
-            <Button fx:id="cl" layoutX="49.0" layoutY="124.0" mnemonicParsing="false" onAction="#barriosxComuna" text="Button" />
          </children>
       </Pane>
       <ImageView fx:id="imgMapa" fitHeight="663.0" fitWidth="510.0" layoutX="324.0" layoutY="133.0" onMouseMoved="#x" pickOnBounds="true" preserveRatio="true">
@@ -84,7 +83,7 @@
             <Image url="@../images/mapa.png" />
          </image>
       </ImageView>
-      <Label fx:id="lblHola" layoutX="636.0" layoutY="732.0" prefHeight="43.0" prefWidth="222.0">
+      <Label fx:id="lblHola" layoutX="630.0" layoutY="728.0" prefHeight="43.0" prefWidth="222.0">
          <font>
             <Font name="System Bold" size="22.0" />
          </font></Label>
@@ -93,9 +92,9 @@
       <Circle fx:id="b221" fill="DODGERBLUE" layoutX="523.0" layoutY="754.0" onMouseMoved="#mostrarBarrios" radius="7.0" stroke="BLACK" strokeType="INSIDE" />
       <Circle fx:id="b222" fill="DODGERBLUE" layoutX="576.0" layoutY="678.0" onMouseMoved="#mostrarBarrios" radius="7.0" stroke="BLACK" strokeType="INSIDE" />
       <Circle fx:id="b220" fill="DODGERBLUE" layoutX="525.0" layoutY="659.0" onMouseMoved="#mostrarBarrios" radius="7.0" stroke="BLACK" strokeType="INSIDE" />
-      <Label layoutX="613.0" layoutY="694.0" text="Barrio:" underline="true">
+      <Label layoutX="607.0" layoutY="690.0" text="Barrio:" underline="true">
          <font>
-            <Font name="System Bold" size="23.0" />
+            <Font name="System Bold" size="26.0" />
          </font>
       </Label>
       <Circle fx:id="b175" fill="DODGERBLUE" layoutX="599.0" layoutY="650.0" onMouseMoved="#mostrarBarrios" radius="7.0" stroke="BLACK" strokeType="INSIDE" />

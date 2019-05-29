@@ -175,13 +175,10 @@ public class RappiController {
 
 	
 	public void initialize() {
-		
 		rbtPedido1.setOnAction(e-> checkers(1));
 		rbtPedido2.setOnAction(e-> checkers(-1));
 		pane1.setVisible(false);
-		
 		rellenarComunas();
-		//barriosxComuna();
 	}
 	
 	public void rellenarComunas() {
@@ -189,11 +186,8 @@ public class RappiController {
 		items.addAll("Comuna 2", "Comuna 3", "Comuna 4", "Comuna 5", "Comuna 7", "Comuna 8", "Comuna 9", "Comuna 10", "Comuna 11", "Comuna 17", "Comuna 19", "Comuna 22");
 		cbxComunaDestino.setItems(items);
 		cbxComunaOrigen.setItems(items);
-		
-		
-		
 	}
-	
+
 	public void barriosxComuna() {
 		cbxComunaOrigen.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
 			@Override
@@ -203,10 +197,9 @@ public class RappiController {
 				String comuna = c[1];
 				
 				String[] barrios = Main.barriosxComuna(comuna);
-				rellenarBarrios(barrios);
+				rellenarBarriosOrigen(barrios);
 
-			}
-			
+			}	
 		});
 		cbxComunaDestino.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
 			@Override
@@ -214,23 +207,27 @@ public class RappiController {
 				// TODO Auto-generated method stub
 				String [] c = newValue.split(" ");
 				String comuna = c[1];
-				
 				String[] barrios = Main.barriosxComuna(comuna);
-				rellenarBarrios(barrios);
-
+				rellenarBarriosDestino(barrios);
 			}
-			
 		});
 	}
 	
-	
-	public void rellenarBarrios(String[] barrios) {
+	public void rellenarBarriosOrigen(String[] barrios) {
 		ObservableList<String> items = FXCollections.observableArrayList();
 		for(int i = 0; i < barrios.length; i++) {
 			System.out.println(barrios[i]);
 			items.addAll(barrios[i]);
 		}
 		cbxBarrioOrigen.setItems(items);
+	}
+	
+	public void rellenarBarriosDestino(String[] barrios) {
+		ObservableList<String> items = FXCollections.observableArrayList();
+		for(int i = 0; i < barrios.length; i++) {
+			System.out.println(barrios[i]);
+			items.addAll(barrios[i]);
+		}
 		cbxBarrioDestino.setItems(items);
 	}
 	
@@ -303,13 +300,16 @@ public class RappiController {
 		
 		imgMapa.setOnMouseMoved(a ->x());
 	}
+	
 	public void x() {
 		lblHola.setText("");
 	}
+	
 	public void buscarBarrio(String cod) {
 		String barrio = Main.searchNeighborhood(cod);
 		lblHola.setText(barrio);
 	}
+	
 	public void checkers(int i) {
 		if(i > 0) {
 			if(rbtPedido1.isSelected()) {
@@ -326,4 +326,30 @@ public class RappiController {
 		}
 	}
 	
+	public void shortestPath(ActionEvent e) throws Exception {
+		String[] comunaI = cbxComunaOrigen.getSelectionModel().getSelectedItem().toString().split(" ");
+		String cI = comunaI[1];
+		System.out.println(cI);
+		String[] comunaF = cbxComunaDestino.getSelectionModel().getSelectedItem().toString().split(" ");
+		String cF = comunaF[1];
+		System.out.println(cF);
+		String bI = cbxBarrioOrigen.getSelectionModel().getSelectedItem().toString();
+		System.out.println(bI);
+		String bF = cbxBarrioDestino.getSelectionModel().getSelectedItem().toString();
+		System.out.println(bF);
+
+		String[] path = Main.shortestPath(cI, bI, cF, bF);
+		String camino = "";
+			for (int i = 0; i < path.length; i++) {
+				System.out.println(path[i]);
+				camino += (i+1) + ". "+ path[i] + "\n";
+			}
+		
+			txtRecorrido.setText(camino);
+		
+			//INTENTAR PINTAR EL CAMINO
+	}
+
+	
+
 }

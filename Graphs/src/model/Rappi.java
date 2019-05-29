@@ -836,15 +836,40 @@ public class Rappi {
 //			System.out.println(s[i]);
 //		}
 
-		String[] j = r.severalDeliveries("22", "Pance", "22", "Ciudad Jardín", "17", "El Ingenio", "19",
-				"Cuarto de Legua");
+		
 
-		for (int i = 0; i < j.length; i++) {
-			System.out.println(j[i]);
-		}
+//		System.out.println(r.neighGrafo.getNode(r.searchCommune("22").search("Ciudad Jardín")));
+//		System.out.println(r.neighGrafo.getNodes().size());
 
-		String[] names = { "Calima", "El Ingenio", "Guayaquil", "El Lido", "Club Campestre" };
-		String[] g = r.getCodeR(names);
+		//System.out.println(r.codeN("175"));
+		
+		//r.addEdgesM();
+//		
+//		double m =r.neighB.getDistance(r.searchCommune("5").search("Chiminangos"), r.searchCommune("4").search("Calima"));
+//		System.out.println(r.searchCommune("17").toString());
+		
+		
+	//	System.out.println(m);
+		
+		
+//		String[] j = r.shortestTravel("22", "Club Campestre", "17", "Lilí");
+//		
+//		for (int i = 0; i < j.length; i++) {
+//			System.out.println(j[i]);
+//		}
+//
+//		System.out.println(r.codeN("220"));
+//
+//
+//		String[] s = r.severalDeliveries("22", "Pance", "22", "Ciudad Jardín", "17", "El Ingenio", "19",
+//				"Cuarto de Legua");
+//
+//		for (int i = 0; i < s.length; i++) {
+//			System.out.println(s[i]);
+//		}
+//
+//		String[] names = { "Calima", "El Ingenio", "Guayaquil", "El Lido", "Club Campestre" };
+//		String[] g = r.getCodeR(names);
 
 	}
 

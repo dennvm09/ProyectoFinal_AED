@@ -61,6 +61,18 @@ public class Main extends Application {
 		return barrios;
 	}
 	
+	
+	public static String[] shortestPath(String cI, String bI, String cF, String bF) throws Exception {
+	
+		rappi.txtCommuneNeighborhood();
+		rappi.addNeighborhod();
+		rappi.addEdges();
+
+		String[] path = path = rappi.shortestTravel(cI, bI, cF, bF);
+				
+		return path;
+	}
+	
 	public static Rappi getRappi() {
 		return rappi;
 	}
